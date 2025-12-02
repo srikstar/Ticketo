@@ -11,7 +11,6 @@ function Signin() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-
     const role = {
         "admin": '/admin',
         "partner": '/partner',
@@ -32,7 +31,8 @@ function Signin() {
                 const userData = await get_userdata_api()
                 if (userData?.user) {
                     dispatch(setUser(userData.user))
-                    return <Navigate to={role[userData?.role]} />
+                    console.log(role[userData?.user?.role])
+                    return <Navigate to={role[userData?.user?.role]} />
                 }
             }
         } catch (error) {

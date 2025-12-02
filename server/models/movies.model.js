@@ -23,10 +23,18 @@ const movie = new mongoose.Schema({
         required:true
     },
     genre:{
-        type:String,
+        type:Array,
         required:true
     },
     poster:{
+        type:String,
+        required:true
+    },
+    totalrating:{
+        type:String,
+        required:true
+    },
+    imdbrating:{
         type:String,
         required:true
     }

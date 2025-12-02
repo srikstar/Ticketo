@@ -10,8 +10,8 @@ const movie = axios.create({
 // GET MOVIES
 export const get_movies = async() =>{
     try {
-        const response = await movie.get('/explore/movies')
-        console.log(response)
+        const response = await movie.get('/explore/movies', {withCredentials:true})
+        return response?.data
     } catch (error) {
         return error?.response?.data
     }
