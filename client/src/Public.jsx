@@ -6,8 +6,14 @@ function Public({children}) {
     const { user } = useSelector(state => state.user)
 
     if(user) {
-        return <Navigate to='/user' />
+        const roleRoutes = {
+            'admin': '/admin',
+            'partner': '/partner',
+            'user': '/user'
+        }
+        return <Navigate to={roleRoutes[user.role] || '/user'} />
     }
+    
     return children
 }
 

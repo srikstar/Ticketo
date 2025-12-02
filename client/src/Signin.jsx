@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { Navigate } from 'react-router-dom'
 
 import './Access.css'
 import { get_userdata_api, signin_api } from './Interface/auth.api.js'
@@ -18,11 +17,12 @@ function Signin() {
     }
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleSignin = async (e) => {
         e.preventDefault()
         if (!email || !password) {
-            console.log('Invalid Credientials')
+            console.log('Invalid Credentials')
             return
         }
         try {
@@ -31,8 +31,7 @@ function Signin() {
                 const userData = await get_userdata_api()
                 if (userData?.user) {
                     dispatch(setUser(userData.user))
-                    console.log(role[userData?.user?.role])
-                    return <Navigate to={role[userData?.user?.role]} />
+                    navigate(role[userData?.user?.role])
                 }
             }
         } catch (error) {
