@@ -5,6 +5,7 @@ const cookies = require('cookie-parser')
 
 const mongoDB = require('./mongoose.js')
 const auth = require('./routers/auth.router.js')
+const movies = require('./routers/movies.router.js')
 
 dotenv.config()
 
@@ -19,6 +20,8 @@ app.use(cors({
 }))
 
 app.use('/api/auth', auth)
+app.use('/explore', movies)
+
 
 app.listen(8000, () =>{
     console.log('Server: UP')

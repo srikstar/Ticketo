@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+// import {useDispatch} from 'react-redux'
+
 import Navbar from "../Navbar";
 import "./indexuser.css";
+import { setMovies } from "../../Store/movies.store";
 
 function User() {
+
+  // const dispatch = useDispatch()
+
+
+  useEffect(() =>{
+    const getAllMovies = async() =>{
+      try {
+        const response = await setMovies()
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getAllMovies()
+  },[])
+
+
   return (
     <>
       <Navbar access={'user'}/>
