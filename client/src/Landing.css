@@ -1,0 +1,73 @@
+/* DESIGN */
+.landing-image{
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.landing-main-container a{
+    color: rgb(153, 153, 153);
+}
+
+.landing-main-container *{
+    font-family: "Inter", sans-serif;
+}
+
+.landing-main-container a:hover{
+    color: rgb(211, 211, 211);
+    text-decoration: underline;
+}
+
+.landing-footer-container *{
+    font-family: "Inter", sans-serif;
+    color: rgb(153, 153, 153);
+    font-size: 0.9rem;
+    
+}
+
+.logo{
+    width: 90px;
+    height: 80px;
+}
+
+/* CONTAINERS */
+
+.landing-nav-container{
+    width: 80%;
+    height: 80px;
+    position: absolute;
+    padding: 10px 0px;
+    top: 0px;
+}
+
+.landing-body-container{
+    height: 100vh;
+    background-color: rgb(14, 14, 14);
+}
+
+.landing-section{
+    width: 80%;
+    height: 75vh;
+}
+
+.landing-section-container{
+    width: 50%;
+    height: inherit;
+}
+
+.landing-footer-container{
+    height: 5vh;
+    position: absolute;
+    bottom: 0px;
+}
+
+.landind-social-container{
+    width: 80%;
+    height: inherit;
+}
+
+.landing-social-link{
+    margin: 0px 30px 0px 0px;
+}
+

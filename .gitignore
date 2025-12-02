@@ -1,0 +1,17 @@
+\node_modules
+\.env
+
+
+  useEffect(() => {
+    const getUserData = async () => {
+      try {
+        const response = await get_userdata_api()
+        if (response?.user) {
+          dispatch(setUser(response.user))
+        }
+      } catch (error) {
+      console.log(error)
+    }
+  }
+    getUserData()
+  }, [dispatch])
