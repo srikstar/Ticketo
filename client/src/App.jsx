@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import Landing from './Landing'
@@ -17,8 +17,12 @@ function App() {
     const getUserData = async () => {
       try {
         const response = await get_userdata_api()
-        if (response?.user) {
+        console.log(response)
+        if (response?.user && response?.isLogin) {
           dispatch(setUser(response.user))
+        }
+        else{
+          return <Navigate to='/' />
         }
       } catch (error) {
       console.log(error)
