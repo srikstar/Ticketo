@@ -31,6 +31,8 @@
     border: 0px;
     color: white;
     border-radius: 5px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
 }
 
 .navbar-section-one input:focus{
@@ -48,7 +50,7 @@
 }
 
 .logo-icon{
-    width: 50px;
+    width: 55px;
     height: 50px;
 }
 
@@ -68,6 +70,7 @@
 .navbar-section-two{
     height: 30px;
     background-color: rgb(24, 24, 24);
+    font-family: "Inter", sans-serif;
 }
 
 .div-98{
@@ -88,4 +91,10 @@
 
 .navlink:hover{
     color: white;
+}
+
+.navbar-section-one button{
+    border: 0px;
+    background-color: transparent;
+    padding: 5px 5px;
 }

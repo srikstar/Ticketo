@@ -7,7 +7,6 @@ function User() {
     <>
       <Navbar access={'user'}/>
 
-
       <div className="user-main-container row">
         <div className="banner-main-container"></div>
         <div className="movies-main-container">
@@ -24,10 +23,7 @@ function User() {
                 <h4>7 Votes</h4>
               </div>
               <h3>Hello</h3>
-              <div className="card-genre row-s">
-                <span className="card-genre-container">
-                  Adventure
-                </span>
+              <div className="card-genre row-fs">
                 <span className="card-genre-container">
                   Adventure
                 </span>
@@ -57,10 +53,7 @@ function User() {
                 <h4>7 Votes</h4>
               </div>
               <h3>Hello</h3>
-              <div className="card-genre row-s">
-                <span className="card-genre-container">
-                  Adventure
-                </span>
+              <div className="card-genre row-fs">
                 <span className="card-genre-container">
                   Adventure
                 </span>

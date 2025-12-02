@@ -51,11 +51,10 @@ auth.post('/signin', async (req, res) => {
             isLogin: false
         })
 
-        const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY)
+        const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY, {expiresIn:'7d'})
         res.cookie('token', token, {
             httpOnly: true,
-            secure: false,
-            maxAge: 24 * 60 * 60
+            secure: false
         })
 
         return res.status(200).json({

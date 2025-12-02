@@ -5,11 +5,24 @@
     padding: 0px
 }
 
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 .row{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+}
+
+.row-fs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -46,7 +59,9 @@
     width: 60%;
 }
 
-
 a{
     text-decoration: none;
+}
+button{
+    cursor: pointer;
 }
