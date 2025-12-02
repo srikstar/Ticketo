@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 
 import './Access.css'
 import { get_userdata_api, signin_api } from './Interface/auth.api.js'
@@ -9,20 +10,29 @@ import { setUser } from './Store/auth.store.js'
 function Signin() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+
+    const role = {
+        "admin": '/admin',
+        "partner": '/partner',
+        "user": '/user'
+    }
+
     const dispatch = useDispatch()
 
-    const handleSignin = async(e) =>{
+    const handleSignin = async (e) => {
         e.preventDefault()
-        if(!email || !password) {
+        if (!email || !password) {
             console.log('Invalid Credientials')
             return
         }
         try {
-            const response = await signin_api({email,password})
-            if(response?.isLogin){
+            const response = await signin_api({ email, password })
+            if (response?.isLogin) {
                 const userData = await get_userdata_api()
-                if(userData?.user){
+                if (userData?.user) {
                     dispatch(setUser(userData.user))
+                    return <Navigate to={role[userData?.role]} />
                 }
             }
         } catch (error) {

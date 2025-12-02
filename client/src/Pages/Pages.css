@@ -1,0 +1,44 @@
+.main-container-display{
+    height: auto;
+    padding: 20px 0px;
+}
+
+.admin-movie-filters{
+    height: 30px;
+    padding: 10px 0px;
+    background-color: blue;
+}
+
+.admin-main-display{
+    width: 90%;
+    height: auto;
+}
+
+.movie-table {
+    width: 100%;
+    border-collapse: collapse;  /* VERY IMPORTANT */
+    table-layout: fixed;        /* keeps alignment perfect */
+}
+
+.movie-table th,
+.movie-table td {
+    border: 1px solid #8f8f8f;  /* Excel-like grid border */
+    padding: 6px;
+    text-align: left;
+}
+
+.movie-table th {
+    background-color: #f2f2f2;  /* Optional: light Excel header */
+    font-weight: bold;
+}
+
+
+thead{
+    border: 2px solid black;
+}
+
+tbody{
+    text-align: center;
+}
+
+
