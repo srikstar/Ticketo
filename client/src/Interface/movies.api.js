@@ -17,6 +17,14 @@ export const get_movies = async() =>{
     }
 }
 
+export const update_movie_api = async(id, values) =>{
+    try {
+        const response = await movie.put(`/explore/update-movie/${id}`, values)
+        return response?.data
+    } catch (error) {
+        return error?.response?.data 
+    }
+}
 
 // ADD MOVIE
 export const add_movie_api = async(values) =>{
