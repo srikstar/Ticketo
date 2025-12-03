@@ -68,3 +68,82 @@ thead{
 .delete-btn{
     background-color: red;
 }
+
+.adminadder-main-container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(19, 19, 19, 0.705);
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+}
+
+.adminadder-container{
+    width: 50%;
+    height: auto;
+    background-color: orange;
+    z-index: 3;
+}
+
+
+
+
+.add-movie-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.movie-form {
+    width: 100%;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.movie-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #333;
+}
+
+.movie-form input,
+.movie-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.movie-form textarea {
+    height: 80px;
+    resize: none;
+}
+
+.movie-form label {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #444;
+}
+
+.movie-form button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.movie-form button:hover {
+    background: #005fcc;
+}

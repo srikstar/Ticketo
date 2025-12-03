@@ -16,3 +16,14 @@ export const get_movies = async() =>{
         return error?.response?.data
     }
 }
+
+
+// ADD MOVIE
+export const add_movie_api = async(values) =>{
+    try {
+        const response = await movie.post('/explore/add-movies', values)
+        return response?.data
+    } catch (error) {
+        return error
+    }
+}
