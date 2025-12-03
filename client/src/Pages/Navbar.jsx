@@ -9,7 +9,7 @@ import { logout_api } from '../Interface/auth.api'
 import { clearUser } from '../Store/auth.store.js'
 import { useDispatch } from 'react-redux'
 
-function Navbar({ access }) {
+function Navbar({ access, setPage}) {
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -45,7 +45,7 @@ function Navbar({ access }) {
                     </div>
                     <div className="navbar-section-two div row">
                         {navbar === 'user' && <UserNav />}
-                        {navbar === 'admin' && <AdminNav />}
+                        {navbar === 'admin' && <AdminNav setPage={setPage}/>}
                         {navbar === 'partner' && <PartnerNav />}
                     </div>
                 </div>

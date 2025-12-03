@@ -1,18 +1,20 @@
-import React, { useEffect, useState }  from 'react'
-import {useDispatch} from 'react-redux'
+import React, { useEffect, useState } from 'react'
 
+import './Admin.css'
 import Navbar from '../Navbar'
-import AdminMovies from './AdminMovies'
-import '../Pages.css'
-import { get_movies } from '../../Interface/movies.api'
+import AdminM from '../Admin/Movies/AdminM'
+import AdminT from './Theaters/AdminT'
+
+import { get_movies } from '../../Interface/movies.api.js'
 import { setMovies } from '../../Store/movies.store.js'
-import AdminAdder from './AdminAdder.jsx'
- 
+import { useDispatch } from 'react-redux'
+
+
 function Admin() {
 
+  const [page, setPage] = useState('')
   const dispatch = useDispatch()
-  const [adder, setAdder] = useState(false)
-
+  
   useEffect(() =>{
     const getMovies = async() =>{
       try {
@@ -28,17 +30,10 @@ function Admin() {
 
   return (
     <>
-        <Navbar access={'admin'} />
-
-        {adder && <AdminAdder />}
-        <div className='admin-movie-filters div row'>
-          <button onClick={() => setAdder(true)}>+ Add Movies</button>
-        </div>
-        <div className='main-container-display div row'>
-          <div className="admin-main-display">
-            <AdminMovies />
-          </div>
-        </div>
+      <Navbar access={'admin'} setPage={setPage} />
+      {page === '' && <AdminM />}
+      {page === 'movies' && <AdminM />}
+      {page === 'theaters' && <AdminT />}
     </>
   )
 }
