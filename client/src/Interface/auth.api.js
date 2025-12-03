@@ -27,6 +27,15 @@ export const signin_api = async(values) =>{
     }
 }
 
+export const logout_api = async() =>{
+    try {
+        const response = await auth.post('/api/auth/logout');
+        return response?.data
+    } catch (error) {
+        return error
+    }
+}
+
 // Get Current
 export const get_userdata_api = async() =>{
     try {

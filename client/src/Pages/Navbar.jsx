@@ -1,12 +1,29 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import UserNav from './User/UserNav'
 import PartnerNav from './Partner/PartnerNav'
 import './Navbar.css'
 import AdminNav from './Admin/AdminNav'
+import { logout_api } from '../Interface/auth.api'
+import { clearUser } from '../Store/auth.store.js'
+import { useDispatch } from 'react-redux'
 
 function Navbar({ access }) {
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const handleLogout = async() =>{
+        try {
+            const response = await logout_api();
+            console.log(response?.message)
+            dispatch(clearUser())
+            navigate('/')
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const navbar = access
 
@@ -23,7 +40,7 @@ function Navbar({ access }) {
                         </div>
                         <div className='row'>
                             <Link to=""><img className='profile-icon' src="/logo.png" alt="" /></Link>
-                            <button className='row'><img className="logout-icon" src="/logout.png" alt="logout-icon" /></button>
+                            <button className='row' onClick={handleLogout}><img className="logout-icon" src="/logout.png" alt="logout-icon" /></button>
                         </div>
                     </div>
                     <div className="navbar-section-two div row">

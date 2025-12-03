@@ -69,6 +69,14 @@ auth.post('/signin', async (req, res) => {
     }
 })
 
+// Log out
+auth.post('/logout', (req,res) =>{
+    res.clearCookie('token')
+    return res.status(200).json({
+        message : "Logged out successfully"
+    })
+})
+
 // User Data
 auth.get('/get-current-data', isAuth, async (req, res) => {
     try {
