@@ -68,6 +68,7 @@ function Movies() {
 
     useEffect(() => {
         const handleDelete = async () => {
+            if (!deleteMovie) return;
             try {
                 const reponse = await delete_movie_api(deleteMovie)
                 if (reponse?.isDeleted) {

@@ -162,3 +162,9 @@
 .admin-control-child label{
     color: white;
 }
+
+.admin-theater-approve{
+    width: 80%;
+    height: 100vh;
+    padding: 10px 5px;
+}
