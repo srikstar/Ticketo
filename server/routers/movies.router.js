@@ -43,8 +43,8 @@ movie.post('/add-movies', async (req, res) => {
 // UPDATE
 movie.put('/update-movie/:id', async (req, res) => {
     try {
-        const updateMovie = await Movies.findByIdAndUpdate(req.params.id, req.body, {new : true})
-        
+        const updateMovie = await Movies.findByIdAndUpdate(req.params.id, req.body, { new: true })
+
         if (!updateMovie) return res.status(200).json({
             message: 'Movie Not found. No Update made',
         })
@@ -59,5 +59,22 @@ movie.put('/update-movie/:id', async (req, res) => {
         })
     }
 })
+
+// DELETE
+movie.delete('/delete-movie/:id', async (req, res) => {
+    try {
+        const movie = await Movies.findByIdAndDelete(req.params.id)
+        return res.status(200).json({
+            message: 'Movie Deleted Successfully',
+            isDeleted : true
+        })
+    } catch (error) {
+        return res.status(500).json({
+            message: 'Internal server error',
+            error: error
+        })
+    }
+})
+
 
 module.exports = movie

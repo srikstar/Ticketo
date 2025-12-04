@@ -17,6 +17,7 @@ export const get_movies = async() =>{
     }
 }
 
+// UPDATE MOVIE
 export const update_movie_api = async(id, values) =>{
     try {
         const response = await movie.put(`/explore/update-movie/${id}`, values)
@@ -30,6 +31,16 @@ export const update_movie_api = async(id, values) =>{
 export const add_movie_api = async(values) =>{
     try {
         const response = await movie.post('/explore/add-movies', values)
+        return response?.data
+    } catch (error) {
+        return error
+    }
+}
+
+// DELETE MOVIE
+export const delete_movie_api = async(id) =>{
+    try {
+        const response = await movie.delete(`/explore/delete-movie/${id}`)
         return response?.data
     } catch (error) {
         return error
