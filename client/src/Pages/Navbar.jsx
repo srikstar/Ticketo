@@ -46,7 +46,7 @@ function Navbar({ access, setPage}) {
                     <div className="navbar-section-two div row">
                         {navbar === 'user' && <UserNav />}
                         {navbar === 'admin' && <AdminNav setPage={setPage}/>}
-                        {navbar === 'partner' && <PartnerNav />}
+                        {navbar === 'partner' && <PartnerNav setPage={setPage}/>}
                     </div>
                 </div>
             </section>

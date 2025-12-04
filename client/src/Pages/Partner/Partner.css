@@ -1,0 +1,81 @@
+.partner-main-container {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.partner-add-container {
+    width: 50%;
+    height: 70vh;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.partner-add-container form{
+    width: 90%;
+    height: 50vh;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 12px 0;
+    gap: 20px;
+}
+
+.form-row label {
+    width: 150px; /* Adjust width if needed */
+    color: white;
+    font-weight: 600;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    background: dodgerblue;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.theater-display-main{
+    width: 90%;
+    height: auto;
+    padding: 30px 0px;
+}
+
+.theater-display-main table{
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+.theater-display-main table thead{
+    text-align: center;
+}
+
+
+.theater-display-main table tbody tr{
+ text-align: center;
+}
+
+.theater-display-main table tbody td{
+    padding: 10px 0px;
+}
