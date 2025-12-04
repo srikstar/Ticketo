@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+
+import AdminEdit from '../AddEdit/AdminEdit'
 import '../Admin.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { get_movies } from '../../../Interface/movies.api'
@@ -8,6 +10,11 @@ function Movies() {
 
     const dispatch = useDispatch()
     const { movies } = useSelector(state => state.movies)
+
+    const [control, setControl] = useState(false)
+    const [movieEdit, setMovieEdit] = useState('')
+
+    console.log(movieEdit)
 
     useEffect(() => {
         const getMovies = async () => {
@@ -22,11 +29,17 @@ function Movies() {
         getMovies()
     }, [dispatch])
 
+    const handleMovieSubmit = (data) => {
+    console.log("Movie Data Submitted:", data);
+    // call API here
+}
+
     return (
         <>
+        {control && <AdminEdit setControl={setControl} control={control} onSubmit={handleMovieSubmit} edit={movieEdit}/>}
             <section className="div row">
                 <div className='filter-movie-container row-fs'>
-                    <button onClick={console.log('Hi')}>+ Add Movies</button>
+                    <button onClick={() => setControl(true)}>+ Add Movies</button>
                 </div>
             </section>
 
@@ -34,7 +47,7 @@ function Movies() {
                 <div className="movie-display-container row-sb">
 
                     {movies && movies.map((movie) => (
-                        <div className="movie-display row-sb">
+                        <div className="movie-display row-sb" key={movie._id}>
                             <div className="movie-card-image">
                                 <img className='movie-poster-image' src={movie?.poster} alt="movie-poster-image" />
                             </div>
@@ -57,7 +70,7 @@ function Movies() {
                                 </div>
                                 <h3>IMDB: <span>{movie?.imdbrating}</span></h3>
                                 <div className='admin-action-container row-fs'>
-                                    <button className='admin-edit admin-control'>Edit</button>
+                                    <button onClick={() => {setMovieEdit(movie); setControl(true)}} className='admin-edit admin-control'>Edit</button>
                                     <button className='admin-delete  admin-control'>Delete</button>
                                 </div>
                             </div>

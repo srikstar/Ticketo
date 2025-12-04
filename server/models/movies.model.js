@@ -31,7 +31,8 @@ const movie = new mongoose.Schema({
         required:true
     },
     totalrating:{
-        type:String,
+        type:Number,
+        default : 0,
         required:true
     },
     imdbrating:{
