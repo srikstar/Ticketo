@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 
 import Navbar from "../Navbar";
 import "./indexuser.css";
@@ -11,6 +12,7 @@ function User() {
 
   const dispatch = useDispatch()
   const { movies } = useSelector(state => state.movies)
+  const  navigate = useNavigate()
 
   useEffect(() => {
     const getAllMovies = async () => {
@@ -23,6 +25,10 @@ function User() {
     }
     getAllMovies()
   }, [dispatch])
+
+  const handleMovieNavigate = (name) =>{
+    navigate(`/movies/${name}`)
+  }
 
 
   return (
@@ -39,9 +45,9 @@ function User() {
           </h2>
           <p style={{ color: "grey" }}>Movies in theater</p>
           <div className="movies-display-container div row-sb">
-            <Link className="link-card row-sb div">
-              {movies && movies.map((movie) => (
-                <div className="movie-card user-card card" key={movie._id}>
+            {movies && movies.map((movie) => (
+            <div className="link-card row-sb" onClick={() => {handleMovieNavigate(movie?._id)}}>
+                <div className="movie-card user-card card"  key={movie._id}>
                   <img className="card-image" src={movie.poster} alt="card-image" />
                   <div className="card-rating-container div row-sb">
                     <h4 className="row"><img className="star" src="/start.png" alt="star" />&nbsp;{movie.imdbrating}</h4>
@@ -61,8 +67,8 @@ function User() {
 
                   </div>
                 </div>
-              ))}
-            </Link>
+            </div>
+            ))}
           </div>
         </div>
 

@@ -17,6 +17,16 @@ export const get_movies = async() =>{
     }
 }
 
+
+export const get_specific_movies = async(id) =>{
+    try {
+        const response = await movie.get(`/explore/${id}`, {withCredentials:true})
+        return response?.data
+    } catch (error) {
+        return error?.response?.data
+    }
+}
+
 // UPDATE MOVIE
 export const update_movie_api = async(id, values) =>{
     try {

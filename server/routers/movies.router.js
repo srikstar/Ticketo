@@ -18,6 +18,20 @@ movie.get('/movies', async (req, res) => {
     }
 })
 
+movie.get('/:id', async (req, res) => {
+    try {
+        const movie = await Movies.findById(req.params.id)
+        return res.status(200).json({
+            movies: movie
+        })
+    } catch (error) {
+        return res.status(500).json({
+            message: 'Internal Server Error',
+            error: error
+        })
+    }
+})
+
 // POST
 movie.post('/add-movies', async (req, res) => {
     try {

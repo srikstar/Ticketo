@@ -1,0 +1,125 @@
+.movie-details-main {
+  padding: 20px 50px;
+  background: #f8f9fa;
+}
+
+.back-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.movie-details-container {
+  display: flex;
+  gap: 40px;
+}
+
+.movie-left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-poster {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.trailer-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #0066ff;
+  color: #fff;
+  border: none;
+}
+
+.movie-left p {
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.movie-right {
+  width: 65%;
+}
+
+.movie-right h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.movie-genre {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.rating-value {
+  font-weight: bold;
+}
+
+.release-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.movie-description {
+  margin: 15px 0;
+  color: #444;
+  max-width: 90%;
+}
+
+.details-table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+}
+
+.details-table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+.details-table td:first-child {
+  width: 40%;
+  background: #fafafa;
+  font-weight: 600;
+}
+
+.btn-row {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.back-list-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #999;
+  background: #e8e8e8;
+  cursor: pointer;
+}
+
+.book-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #0066ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
