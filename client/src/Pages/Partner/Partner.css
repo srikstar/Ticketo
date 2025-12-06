@@ -18,7 +18,7 @@
     border-radius: 10px;
 }
 
-.partner-add-container form{
+.partner-add-container form {
     width: 90%;
     height: 50vh;
 }
@@ -32,7 +32,8 @@
 }
 
 .form-row label {
-    width: 150px; /* Adjust width if needed */
+    width: 150px;
+    /* Adjust width if needed */
     color: white;
     font-weight: 600;
 }
@@ -56,26 +57,57 @@
     cursor: pointer;
 }
 
-.theater-display-main{
+.theater-display-main {
     width: 90%;
     height: auto;
     padding: 30px 0px;
 }
 
-.theater-display-main table{
+.theater-display-main table {
     border-collapse: collapse;
     border: 1px solid grey;
 }
 
-.theater-display-main table thead{
+.theater-display-main table thead {
     text-align: center;
 }
 
 
-.theater-display-main table tbody tr{
- text-align: center;
+.theater-display-main table tbody tr {
+    text-align: center;
 }
 
-.theater-display-main table tbody td{
+.theater-display-main table tbody td {
     padding: 10px 0px;
+}
+
+.show-shows {
+    position: absolute;
+    top: 0px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.show-shows-container {
+    width: 70%;
+    height: 50vh;
+    background-color: red;
+    border-radius: 10px;
+}
+
+tr td{
+    text-align: center;
+}
+
+.add-shows{
+    width: 70%;
+    height: inherit;
+    background-color: blue;
+    position: absolute;
+    top: 25vh;
+    border-radius: 10px;
 }

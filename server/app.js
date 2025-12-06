@@ -7,6 +7,7 @@ const mongoDB = require('./mongoose.js')
 const auth = require('./routers/auth.router.js')
 const movies = require('./routers/movies.router.js')
 const theater = require('./routers/theaters.router.js')
+const shows = require('./routers/shows.router.js')
 
 dotenv.config()
 
@@ -23,6 +24,7 @@ app.use(cors({
 app.use('/api/auth', auth)
 app.use('/explore', movies)
 app.use('/theater', theater)
+app.use('/shows', shows)
 
 
 app.listen(8000, () =>{

@@ -6,7 +6,8 @@ const theater = express.Router()
 // GET ALL Theaters
 theater.get('/theaters', async (req, res) => {
     try {
-        const theater = await Theaters.find()
+        const theater = await Theaters.find().populate('owner', 'name')
+        console.log(theater)
         return res.status(200).json({
             theaters: theater
         })

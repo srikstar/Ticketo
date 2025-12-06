@@ -57,7 +57,7 @@ function Theaters() {
                   <td>{data?.address}</td>
                   <td>{data?.email}</td>
                   <td>{data?.phone}</td>
-                  <td>{data?.owner}</td>
+                  <td>{data?.owner?.name}</td>
                   <td>{data?.isActive ? 'Approved' : 'Pending'}</td>
                   <td>
                     {data?.isActive ? (
