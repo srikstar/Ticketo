@@ -50,43 +50,74 @@ show.delete('/delete-shows/:id', async (req, res) => {
 })
 
 // GET ALL SHOWS AND THEATER FOR A MOVIE
-show.get('/get-all-theathers-by-movie', async (req, res) => {
-    try {
+show.get('/get-all-theathers-by-movie/:id/:date', async (req, res) => {
+  try {
+    const movie = req.params.id;
+    const date = req.params.date;
 
-        const { movie, data } = req.body
-        const shows = await Shows.find({ movie, date })
+    // Populate theater data
+    const shows = await Shows.find({ movie, date })
+      .populate("thrater");
 
-        // We need to map the shows with theaters
+    const uniqueTheaters = [];
 
-        res.send({
-            message: 'Show is fetched',
-            shows: shows
-        })
+    shows.forEach((showObj) => {
+      const existingTheater = uniqueTheaters.find(
+        (t) => t._id.toString() === showObj.thrater._id.toString()
+      );
 
-    } catch (error) {
-        res.json({
-            message: 'Internal server error',
-            error: error
-        })
-    }
-})
+      if (!existingTheater) {
+        const showsOfThisTheater = shows.filter(
+          (s) => s.thrater._id.toString() === showObj.thrater._id.toString()
+        );
+
+        uniqueTheaters.push({
+          ...showObj.thrater._doc,
+          shows: showsOfThisTheater
+        });
+      }
+    });
+
+    res.status(200).json({
+      message: "Shows fetched successfully",
+      theaters: uniqueTheaters
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      message: "Internal server error",
+      error
+    });
+  }
+});
+
 
 
 
 // GET SHOWS BY ID
 show.get('/get-shows-by-id/:id', async (req, res) => {
-    try {
-        const show = Shows.findById(req.params.id)
-        res.send({
-            message: 'Show fetched'
-        })
-    } catch (error) {
-        return res.json({
-            message: 'Internal server error',
-            error: error
-        })
+  try {
+    const showData = await Shows.findById(req.params.id)
+      .populate('movie', 'title language duration poster')
+      .populate('thrater', 'name address email phone');
+
+    if (!showData) {
+      return res.status(404).json({ message: 'Show not found' });
     }
-})
+
+    res.status(200).json({
+      message: 'Show fetched successfully',
+      show: showData
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      message: 'Internal server error',
+      error
+    });
+  }
+});
+
 
 
 // GET ALL SHOWS

@@ -12,6 +12,7 @@ import Admin from './Pages/Admin'
 import Partner from './Pages/Partner'
 import User from './Pages/User'
 import Movies from './Pages/User/Movies/Movies.jsx'
+import Booking from './Pages/User/Booking/Booking.jsx'
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/partner" element={<Protected><Partner /></Protected>} />
         <Route path="/user" element={<Protected><User /></Protected>} />
         <Route path="/movies/:id" element={<Protected><Movies /></Protected>} />
+        <Route path="/booking/:id" element={<Protected><Booking /></Protected>} />
       </Routes>
     </BrowserRouter>
   )

@@ -123,3 +123,78 @@
   border: none;
   cursor: pointer;
 }
+
+.movie-poster{
+  width: 300px;
+  height: auto;
+}
+
+.show-theater-container{
+  width: 90%;
+  height: 70vh;
+}
+
+.shows-section {
+  margin-top: 20px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.theater-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.theater-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.theater-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.showtime-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.showtime-btn {
+  border: 2px solid #22c55e; /* green like screenshot */
+  border-radius: 6px;
+  padding: 6px 12px;
+  min-width: 80px;
+  cursor: pointer;
+  background: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+.showtime-btn:hover {
+  background: #22c55e;
+  color: #fff;
+}
+
+.showtime-btn .time {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.showtime-btn .format {
+  display: block;
+  font-size: 10px;
+  margin-top: 3px;
+  opacity: 0.7;
+}
+
+.no-shows {
+  text-align: center;
+  opacity: 0.6;
+}
