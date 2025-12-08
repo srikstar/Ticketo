@@ -68,6 +68,7 @@ function Booking() {
 
                     <div className='seats-price-details'>
                         <h2>Selected Seats : {selectedSeats.join(', ')}</h2>
+                        <h2>Ticket Qty : {selectedSeats.length}</h2>
                         <h2>Cost of Ticket : {selectedSeats.length !== 0 && show?.tickePrice * selectedSeats.length}</h2>
                     </div>
                     
